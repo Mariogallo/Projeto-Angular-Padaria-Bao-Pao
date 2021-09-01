@@ -1,0 +1,23 @@
+<mat-toolbar class="app-title">Filiais Cadastradas</mat-toolbar>
+
+<div class="home-content">
+    <mat-card class="home-card" *ngFor="let padaria of padarias | async">
+        <div class="card-body">
+            <mat-card-header>
+                <div mat-card-avatar></div>
+                <mat-card-title>Padaria: {{padaria.filial}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>Endereço: {{padaria.endereco}}</p>
+                <p>Bairro: {{padaria.bairro}}</p>            
+                <p>Cidade: {{padaria.cidade}}</p>            
+                <p>Estado: {{padaria.estado}}</p>
+                <p>CEP: {{padaria.cep}}</p>
+            </mat-card-content>
+        </div>
+        <mat-card-actions *ngIf="router.url === '/padarias'">
+            <button color="accent" mat-raised-button (click)="edit(padaria, padaria.key)">Editar</button>
+            <button color="warn" mat-raised-button (click)="delete(padaria.key)">Excluir</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

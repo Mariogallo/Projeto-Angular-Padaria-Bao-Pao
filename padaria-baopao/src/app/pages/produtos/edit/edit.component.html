@@ -1,0 +1,52 @@
+<div>
+    <mat-card>
+        <mat-card-title>Cadastro de Produtos</mat-card-title>
+        <mat-card-content>
+            <form autocomplete="off" (ngSubmit)="onSubmit()">
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput class="form-control" [(ngModel)]="produto.titulo" name="titulo" placeholder="Titulo">
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput class="form-control" [(ngModel)]="produto.descricao" name="descricao" placeholder="Descrição">
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput class="form-control" [(ngModel)]="produto.codBarra" name="codBarra" placeholder="Código de Barras">
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput class="form-control" [(ngModel)]="produto.validade" name="validade" placeholder="Validade">
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput class="form-control" [(ngModel)]="produto.padaria" name="padaria" placeholder="Padaria">
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput class="form-control" [(ngModel)]="produto.quantidade" name="quantidade" placeholder="Quantidade">
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-slider  thumbLabel
+                                [displayWith]="formatLabel"
+                                tickInterval="1000"
+                                min="1"
+                                max="100"
+                                [(ngModel)]="produto.quantidade" name="quantidade">
+                    </mat-slider>
+                </p>
+            <mat-card-actions class="button">
+                <button type="submit" color="accent" mat-raised-button>Salvar</button>
+                <button type="reset" color="primary" mat-raised-button>Cancelar</button>
+            </mat-card-actions>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
